@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+   
+   
+   <!--  -->
+    
+    <context:annotation-config/>  <!-- this line use for programmer to add annotation in our program for xml file -->
+    <context:property-placeholder location="info.properties"/> <!-- if your file data is not access  or class path is not found  than you create your file in src(path) folder of your project -->
+    <context:component-scan base-package="com.brigedlabz.autowiring.annotaion"></context:component-scan>
+   
+   
+   
+    <bean id="suyaobj" class="com.brigedlabz.spring.FirstSpring.Suyabule"></bean>
+    <bean id="lgobj" class="com.brigedlabz.spring.FirstSpring.LgBulb"></bean>
+    <bean id="bulb" class="com.brigedlabz.spring.FirstSpring.BulbService">
+     <property name="bulb" ref="suyaobj"></property>
+    </bean>
+    
+    
+  <!--   Employee Class information -->
+  
+   <bean id="emp" class="com.brigedlabz.dependencyinjection.constructor.Employee">
+      <constructor-arg value="10" type="int"></constructor-arg>  
+      <constructor-arg  value="Akshay" ></constructor-arg>
+      
+   </bean>
+     
+     
+    <!-- Mobile Company  -->
+    
+    <bean id="ramobj" class="com.brigedlabz.dependencyinjection.constructor.simple.Ram">
+     <constructor-arg value="2gb"></constructor-arg>
+    </bean>
+    
+    <bean id="mobailojb" class="com.brigedlabz.dependencyinjection.constructor.simple.Mobile">
+      <constructor-arg value="15000" type="int"></constructor-arg>
+      <constructor-arg value="nokiya"></constructor-arg>
+      <constructor-arg > <ref bean="ramobj"/></constructor-arg>
+    </bean>
+    
+    <!-- Student information using list collection -->
+    
+    <bean id="addressObj" class="com.brigedlabz.dependencyinjection.constructor.list.Address">
+    <constructor-arg value="pune"></constructor-arg>
+    <constructor-arg value="maharashtra"></constructor-arg>
+    </bean>
+    
+    <bean id="empObj" class="com.brigedlabz.dependencyinjection.constructor.list.Student">
+    <constructor-arg value="1"></constructor-arg>
+    <constructor-arg value="Akshay"></constructor-arg>
+    <constructor-arg>
+    <list>
+       <ref bean="addressObj"/>
+    </list>
+    </constructor-arg>
+    </bean>
+    
+    <!-- Employee information using Map collection -->
+   
+      <bean id="empObj1" class="com.brigedlabz.dependencyinjection.constructor.set.Employee">
+        <constructor-arg value="1" type="int"></constructor-arg>
+        <constructor-arg value="Rohit" type="String"></constructor-arg>
+        <constructor-arg>
+            <set>
+               <value>Pune</value>
+               <value>mh</value>
+               <value>Pune</value>
+               <value>india</value>
+               <value>india</value>
+            </set>
+        </constructor-arg>
+       
+      </bean>
+        
+    <!-- Question Answer using Map collection  -->
+    
+    <bean id="ansObj" class="com.brigedlabz.dependencyinjection.constructor.map.QuestionAnswer">
+    <constructor-arg value ="1" type="int"></constructor-arg>    
+    <constructor-arg value="What is java ?" type="String"></constructor-arg>
+    <constructor-arg>
+      <map>
+          <entry key="java is oject oriented language" value="Akshay"></entry>
+          <entry key="java is pure oject oriented language" value="tushar"></entry>
+          <entry key="java provide security" value="rohit"></entry>
+      </map>
+    </constructor-arg>
+    </bean>
+    
+    <bean id="getEmpObj" class="com.brigedlabz.dependencyinjection.method.simple.Employee">
+    <property name="id">
+    <value>1</value>
+    </property>
+    <property name="name">
+    <value>Akshay</value>
+    </property>
+    <property name="city">
+     <value>Mahabaleshwar</value>
+    </property>
+    
+    </bean>
+    
+     
+    <!-- Student information using lit collection in getter and setter method -->
+    
+    <bean id="stuObj" class="com.brigedlabz.dependencyinjection.method.list.Student">
+       <property name="rollNumber">
+        <value>1</value>
+       </property>
+       <property name="name">
+       <value>Akshay</value>
+       </property>
+       <property name="city">
+        <list>
+           <value>Mahabaleshwar</value>
+           <value>pune</value>
+           <value>Mahabaleshwar</value>  <!--  duplicate values are allowed  -->
+        </list>
+       </property>
+    </bean>
+  
+    
+    <!-- Question and answer using map collection   -->
+    
+   <bean id="queObj" class="com.brigedlabz.dependencyinjection.method.map.QuestionAnswer">
+      <property name="number">
+       <value>1</value>
+      </property>
+      <property name="question">
+       <value>What is java ?</value>
+      </property>
+      <property name="answer">
+         <map>
+              <entry key="Java is a Platform" value="Akshay"></entry>
+              <entry key="Java is a programming language" value="Rohit"></entry>
+              <entry key="Java is a object oriented programming language" value="tushar"></entry>
+         </map>
+      </property>
+   
+   </bean> 
+   
+   
+   <!-- autowiring byNmae  -->
+   
+   <bean id="car" class="com.brigedlabz.autowiring.byname.Car"></bean> <!-- bean id and class reference name must be same -->
+   <bean id="bmw" class="com.brigedlabz.autowiring.byname.BMW" autowire="byName"></bean>
+   
+   
+   <!-- autowiring bytype  -->
+   
+    <bean id="car1" class="com.brigedlabz.autowiring.bytype.Car"></bean> <!-- bean id and class reference name may be diff -->
+   <bean id="bm" class="com.brigedlabz.autowiring.bytype.BMW" autowire="byType"></bean>
+   
+   
+    <!-- @autowiring constructor -->
+    
+    <bean id="paymentGateway" class="com.brigedlabz.autowiring.constructor.PaymentGateway" autowire="constructor" />
+     
+    <bean id="orderBean" class="com.brigedlabz.autowiring.constructor.Order" >
+        <property name="item" value="Java Book" />
+        <property name="price" value="RS 225" />
+    </bean>
+    
+    
+    <!--  Definition for profile bean  -->
+    <bean id="profile" class="com.brigedlabz.autowiring.quaifier.Profile">
+        
+    </bean>
+    <!--  Definition for student1 bean -->
+    <bean id="student1" class="com.brigedlabz.autowiring.quaifier.Student">
+        <property name = "name" value = "Akshay" />
+        <property name = "age" value = "22"/>
+    </bean>
+    <!--  Definition for student1 bean -->
+    <bean id="student2" class="com.brigedlabz.autowiring.quaifier.Student">
+        <property name = "name" value = "Tushar" />
+        <property name = "age" value = "20"/>
+    </bean>
+    
+    
+    <!-- @autowiring using annotations  -->
+    <bean id="human" class="com.brigedlabz.autowiring.usingallannotation.Human"></bean>
+    
+    <bean id="humanObject " class="com.brigedlabz.autowiring.usingallannotation.Heart">
+          <property name="nameOfAnimal" value="Human"></property>
+          <property name="numberOfHeart" value="1"></property>
+    </bean>
+    <bean id="octopusObject" class="com.brigedlabz.autowiring.usingallannotation.Heart">
+          <property name="nameOfAnimal" value="octopus"></property>
+          <property name="numberOfHeart" value="3"></property>
+    </bean>
+    
+    
+    <!-- injecting literal properties file example   -->
+    <bean id="stuInfo" class="com.brigedlabz.propertiesfileexample.Student">
+         <property name="name" value="${student.name}"></property>
+         <property name="course" value="${student.course}"></property>
+         <property name="hobby" value="${student.hobby}"></property>
+         
+    </bean>
+    
+    </beans>
