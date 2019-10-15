@@ -8,7 +8,8 @@ public class Profile {
 	@Autowired
 	@Qualifier("student1")
 	private Student student;
-
+     
+	
 	//@Autowired
 	public Profile() {
 	    // System.out.println("inside constuctor");

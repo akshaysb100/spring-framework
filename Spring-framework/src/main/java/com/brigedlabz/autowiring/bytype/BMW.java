@@ -1,6 +1,7 @@
 package com.brigedlabz.autowiring.bytype;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 
 public class BMW {
 
@@ -11,6 +12,7 @@ public class BMW {
     	// System.out.println("BMW Car");
      }
 
+     
 	public Car getCar() {
 		return car;
 	}

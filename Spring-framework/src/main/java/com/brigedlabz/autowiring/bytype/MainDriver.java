@@ -11,7 +11,7 @@ public class MainDriver {
 		ApplicationContext context = new ClassPathXmlApplicationContext("/com/brigedlabz/applicationContext.xml");
 		BMW bmw = context.getBean("bm",BMW.class);
 		bmw.display();
-
+        
 	}
 
 }

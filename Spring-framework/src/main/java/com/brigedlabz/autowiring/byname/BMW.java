@@ -8,7 +8,7 @@ public class BMW {
      Car car;
      
      BMW(){
-    	// System.out.println("BMW Car");
+    	// System.out.println("My BMW Car");
      }
 
 	public Car getCar() {
