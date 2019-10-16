@@ -8,8 +8,8 @@ public class StudentInfoMain {
 	public static void main(String[] args) {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("/com/brigedlabz/applicationContext.xml");
-		Student employee = (Student)context.getBean("empObj");
-		employee.show();
+		Student student = (Student)context.getBean("empObj");
+		student.show();
 
 	}
 

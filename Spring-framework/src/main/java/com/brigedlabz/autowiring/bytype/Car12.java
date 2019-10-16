@@ -1,7 +1,8 @@
 package com.brigedlabz.autowiring.bytype;
 
-public class Car {
-	 Car() {
+public class Car12 {
+	
+	Car12() {
 			//System.out.println("car class");
 		}
 		

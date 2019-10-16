@@ -13,7 +13,7 @@ public class App
     {
     	
     ApplicationContext context = new ClassPathXmlApplicationContext("/com/aop/applicationContext.xml");  
-    Operation operation = (Operation) context.getBean("opBean");  
+    Operation operation = (Operation) context.getBean("aopBean");  
     System.out.println("calling msg...");  
     operation.msg();
     operation.show();

@@ -12,7 +12,7 @@ public class MainDriver {
         
 		BMW bmw = context.getBean("bmw", BMW.class);
 		bmw.display();
-		((AbstractApplicationContext) context).close();
+		
 	}
     
 }

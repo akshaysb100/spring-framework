@@ -10,6 +10,7 @@ public class Body {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("/com/brigedlabz/applicationContext.xml");
         Human human = context.getBean("human",Human.class);
+    //   Human hum1 = context.getBean("h1",Human.class);
         human.startPumping();
 	}
 

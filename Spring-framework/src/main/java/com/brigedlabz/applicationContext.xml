@@ -48,7 +48,7 @@
       <constructor-arg > <ref bean="ramobj"/></constructor-arg>
     </bean>
     
-    <!-- Student information using list collection -->
+    <!-- using constructor method Student information using list collection -->
     
     <bean id="addressObj" class="com.brigedlabz.dependencyinjection.constructor.list.Address">
     <constructor-arg value="pune"></constructor-arg>
@@ -150,15 +150,22 @@
    
    
    <!-- autowiring byNmae  -->
-   
-   <bean id="car" class="com.brigedlabz.autowiring.byname.Car"></bean> <!-- bean id and class reference name must be same -->
+   <bean id="car2" class="com.brigedlabz.autowiring.byname.Car"></bean> <!-- bean id and class reference name must be same -->
    <bean id="bmw" class="com.brigedlabz.autowiring.byname.BMW" autowire="byName"></bean>
    
    
    <!-- autowiring bytype  -->
    
-    <bean id="car1" class="com.brigedlabz.autowiring.bytype.Car"></bean> <!-- bean id and class reference name may be diff -->
-   <bean id="bm" class="com.brigedlabz.autowiring.bytype.BMW" autowire="byType"></bean>
+    <bean id="car14"  class="com.brigedlabz.autowiring.bytype.Car12" ></bean> <!-- bean id and class reference name may be diff -->
+    <bean id="car15" class="com.brigedlabz.autowiring.bytype.Car12" autowire-candidate="false" ></bean>
+    <bean id="car16"  class="com.brigedlabz.autowiring.bytype.Car12"  ></bean>
+   
+    <bean id="bm" class="com.brigedlabz.autowiring.bytype.BMW" autowire="byType" >
+           <property name="car">
+               <ref bean="car14"/>
+           </property>
+          
+    </bean>
    
    
     <!-- @autowiring constructor -->
@@ -180,7 +187,7 @@
         <property name = "name" value = "Akshay" />
         <property name = "age" value = "22"/>
     </bean>
-    <!--  Definition for student1 bean -->
+    <!--  Definition for student2 bean -->
     <bean id="student2" class="com.brigedlabz.autowiring.quaifier.Student">
         <property name = "name" value = "Tushar" />
         <property name = "age" value = "20"/>

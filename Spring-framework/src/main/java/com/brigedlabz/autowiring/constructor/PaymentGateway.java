@@ -1,8 +1,10 @@
 package com.brigedlabz.autowiring.constructor;
 
 public class PaymentGateway {
+	 
 	 private Order order;
      private int price;
+     
 	    public PaymentGateway(Order ord){
 	        this.order = ord;
 	    }

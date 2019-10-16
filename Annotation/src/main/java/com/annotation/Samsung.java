@@ -9,7 +9,7 @@ public class Samsung {
  
 	
 	@Autowired
-	@Qualifier("mediaTek")  //if you don't write @Qualifier than you can write @primary on the class of you want on here
+	@Qualifier("mediaTek")  //if you don't write @Qualifier than you can write @primary on the class if you want this class in that class
 	MobileProcessor mobileProcessor;
 	
 	

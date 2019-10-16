@@ -11,8 +11,8 @@ public class MainApp {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("/com/brigedlabz/applicationContext.xml");
         Profile profile = (Profile)context.getBean("profile");
-        profile.printName(); // @Autowired on filed so double out put display   
-        profile.printAge(); // @Autowired on filed so double out put display   
+        profile.printName();   
+        profile.printAge(); 
         
 	}
 

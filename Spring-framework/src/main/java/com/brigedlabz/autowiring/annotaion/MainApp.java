@@ -9,13 +9,13 @@ public class MainApp {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("/com/brigedlabz/applicationContext.xml");
 		
-		CarM vehicle = (CarM)context.getBean("carM");
-		vehicle.drive();
+//		CarM vehicle = (CarM)context.getBean("carM");   // create instance of Bike position of CarM  
+//		vehicle.drive();
 		
 		//or
 		
-//		Vehicle vehicle = (Vehicle)context.getBean("carM");
-//		vehicle.drive();
+		Vehicle vehicle = (Vehicle)context.getBean("carM"); //only changes in carM to bike 
+		vehicle.drive();
 		
 //		Tyre tyre =(Tyre)context.getBean("tyre");
 //		tyre.toString();

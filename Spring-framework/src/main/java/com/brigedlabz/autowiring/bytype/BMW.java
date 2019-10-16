@@ -1,23 +1,24 @@
 package com.brigedlabz.autowiring.bytype;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 
 public class BMW {
 
 @Autowired
- Car car;
+@Qualifier("car14")
+ Car12 car;
      
      BMW(){
     	// System.out.println("BMW Car");
      }
-
      
-	public Car getCar() {
+	public Car12 getCar() {
 		return car;
 	}
 
-	public void setCar(Car car) {
+	public void setCar(Car12 car) {
 		this.car = car;
 	}
      

@@ -1,7 +1,6 @@
 package com.brigedlabz.autowiring.quaifier;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
+
 
 public class Student {
 
