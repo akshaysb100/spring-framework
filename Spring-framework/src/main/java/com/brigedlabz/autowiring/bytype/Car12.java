@@ -7,6 +7,6 @@ public class Car12 {
 		}
 		
 		void print() {
-			 System.out.println("Car model");
+			 System.out.println("Car model 12");
 		}
 }

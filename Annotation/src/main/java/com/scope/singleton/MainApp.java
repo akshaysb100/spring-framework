@@ -1,10 +1,6 @@
 package com.scope.singleton;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.scope.MyConfig;
 
 public class MainApp {
 
@@ -21,6 +17,7 @@ public class MainApp {
 	      objB.setMessage("Object of B");
 	      objB.getMessage();
 	      objA.getMessage();
+	      context.close();
 
 	}
 

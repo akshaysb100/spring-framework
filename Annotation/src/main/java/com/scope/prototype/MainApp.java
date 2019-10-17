@@ -17,8 +17,10 @@ public class MainApp {
 	      objA.getMessage();
 
 	      HelloWorld objB = context.getBean(HelloWorld.class);
+	      objB.setMessage("object of B");
 	      objB.getMessage();
 
+	      objA.getMessage();
 	}
 
 }

@@ -23,7 +23,7 @@
     <bean id="suyaobj" class="com.brigedlabz.spring.FirstSpring.Suyabule"></bean>
     <bean id="lgobj" class="com.brigedlabz.spring.FirstSpring.LgBulb"></bean>
     <bean id="bulb" class="com.brigedlabz.spring.FirstSpring.BulbService">
-     <property name="bulb" ref="suyaobj"></property>
+     <property name="bulb" ref="lgobj"></property>
     </bean>
     
     
@@ -157,8 +157,8 @@
    <!-- autowiring bytype  -->
    
     <bean id="car14"  class="com.brigedlabz.autowiring.bytype.Car12" ></bean> <!-- bean id and class reference name may be diff -->
-    <bean id="car15" class="com.brigedlabz.autowiring.bytype.Car12" autowire-candidate="false" ></bean>
-    <bean id="car16"  class="com.brigedlabz.autowiring.bytype.Car12"  ></bean>
+    <bean id="car15" class="com.brigedlabz.autowiring.bytype.Car12"  ></bean>
+    <bean id="car16"  class="com.brigedlabz.autowiring.bytype.Car13"  ></bean>
    
     <bean id="bm" class="com.brigedlabz.autowiring.bytype.BMW" autowire="byType" >
            <property name="car">
