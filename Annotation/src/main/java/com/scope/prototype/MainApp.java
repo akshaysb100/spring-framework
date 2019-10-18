@@ -6,6 +6,7 @@ import com.scope.singleton.Config;
 import com.scope.singleton.HelloWorld;
 
 public class MainApp {
+	
 
 	public static void main(String[] args) {
 		
