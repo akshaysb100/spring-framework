@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 
-@Component("collegeA")
+@Component("collegeA") //create object of this class
 public class College {
 	
 	//@Value("${college.name}")
